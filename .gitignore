@@ -1,0 +1,78 @@
+# WordPress Theme .gitignore
+
+# Ignora archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignora directorios y archivos de dependencias
+/node_modules/
+/vendor/
+
+# Ignora archivos de configuración de IDE y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignora archivos de log
+*.log
+
+# Ignora archivos de respaldo
+*~
+*.bak
+
+# Ignora archivos de caché
+*.cache
+
+# Ignora archivos compilados
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Ignora archivos de paquetes
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Ignora archivos de configuración local
+wp-config.php
+.env
+
+# Ignora archivos generados por WordPress
+/uploads/
+/upgrade/
+
+# Ignora archivos específicos de temas
+/languages/*.mo
+/languages/*.po
+
+# Ignora archivos de configuración de Sass
+.sass-cache/
+
+# Ignora archivos temporales de PHP
+*.swp
+
+# Ignora archivos de base de datos
+*.sql
+*.sqlite
+
+# Ignora archivos de caché de minificación
+*.min.css
+*.min.js
+
+# Ignora archivos generados por herramientas de optimización de imágenes
+*.webp
+
+# Ignora archivos de configuración de Composer si no los necesitas en el repositorio
+composer.lock
+
+# Ignora archivos de configuración de npm si no los necesitas en el repositorio
+package-lock.json
