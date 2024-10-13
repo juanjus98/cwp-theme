@@ -1,0 +1,15 @@
+.btn-cta{
+    @include button-variant(
+    $background: $cst-color-2,
+    $border: $cst-color-2,
+    $hover-background: darken($cst-color-2, 7.5%),
+    $hover-border: darken($cst-color-2, 10%),
+    $active-background: darken($cst-color-2, 10%),
+    $active-border: darken($cst-color-2, 12.5%)
+  );
+  color: white;
+  font-weight: 600;
+  &:hover{
+    color: white;
+  }
+}

@@ -9,69 +9,32 @@
 </head>
 
 <body <?php body_class(); ?> id="page-<?php echo CST_PAGE_ID; ?>">
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-                    <?php bloginfo('name'); ?>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <header class="header <?php echo "header-" . CST_PAGE_ID; ?>">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top">
+            <div class="container">
+                <div class="site-branding ms-auto">
+                    <?php the_custom_logo(); ?>
+                    <?php echo get_mobile_logo(); ?>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu1" aria-controls="navbarMenu1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <?php
-                if (function_exists('wp_theme_antuca_bootstrap_menu')) {
-                    wp_theme_antuca_bootstrap_menu();
-                }
-                ?>
+                <div class="collapse navbar-collapse" id="navbarMenu1">
+                    <?php
+                        if (function_exists('cwp_theme_menu')) {
+                            cwp_theme_menu();
+                        }
+                    ?>
+                    <?php
+                        wp_nav_menu(array(
+                        'theme_location' => 'cta-menu',
+                        'container' => false,
+                        'menu_class' => 'navbar-nav navbar-cta-menu ms-lg-4'
+                        ));
+                    ?>
+                </div>
             </div>
         </nav>
-        <?php /*
-        <div class="container">
-            <h1><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-            <nav>
-                <?php wp_nav_menu(array('theme_location' => 'primary_menu')); ?>
-            </nav>
-        </div>
-        */ ?>
-
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-        </div>
     </header>
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">

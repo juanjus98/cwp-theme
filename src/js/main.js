@@ -6,11 +6,43 @@ import 'bootstrap';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Validar carga de JS
-    console.log('DOM fully loaded and parsed');
+    console.log('Readdy custom JS!!');
 
     // Initialize all dropdowns
-    document.querySelectorAll('.dropdown-toggle').forEach(dropdownToggle => {
+    /* document.querySelectorAll('.dropdown-toggle').forEach(dropdownToggle => {
         new Dropdown(dropdownToggle);
-    });
+    }); */
+
+    // Navbar fixed
+    var navbar = document.querySelector('.navbar-fixed-top');
+    if (navbar) {
+        var sticky = navbar.offsetTop;
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add('is-scrolling');
+            } else {
+                navbar.classList.remove('is-scrolling');
+            }
+        });
+    }
     
 });
+
+// JavaScript personalizado
+/* document.addEventListener('DOMContentLoaded', function() {
+    var navbar = document.querySelector('.navbar-fixed-top');
+    
+    // Validar que existe el elemento con la clase navbar-fixed-top
+    if (navbar) {
+        var sticky = navbar.offsetTop;
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add('fixed-top');
+            } else {
+                navbar.classList.remove('fixed-top');
+            }
+        });
+    }
+}); */

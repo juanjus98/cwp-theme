@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.bg-1{
+    background-color: $cst-color-1;
+    color: white;
+}
+.bg-2{
+    background-color: $cst-color-2;
+}
+
+.mobile-logo {
+    display: none;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+@include media-breakpoint-down(md) {
+    .custom-logo-link {
+        display: none;
+    }
+    .mobile-logo {
+        display: block;
+    }
+}
+
+/* Estilos base para todos los encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600; /* Semi-bold */
+    color: #333; /* Color oscuro para mejor legibilidad */
+  }
+  
+  /* Estilos específicos para cada nivel de encabezado */
+  h1 {
+    font-size: 2.5rem; /* 40px si el tamaño base es 16px */
+    letter-spacing: -0.5px;
+  }
+  
+  h2 {
+    font-size: 2rem; /* 32px */
+    letter-spacing: -0.3px;
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  h4 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 500; /* Medium */
+  }
+  
+  h5 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500; /* Medium */
+  }
+  
+  h6 {
+    font-size: 1rem; /* 16px */
+    font-weight: 500; /* Medium */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+@include media-breakpoint-down(md) {
+    h1 { font-size: 2rem; } /* 32px */
+    h2 { font-size: 1.75rem; } /* 28px */
+    h3 { font-size: 1.5rem; } /* 24px */
+    h4 { font-size: 1.25rem; } /* 20px */
+    h5 { font-size: 1.1rem; } /* ~18px */
+    h6 { font-size: 1rem; } /* 16px */
+  }
+
+  .header-1{
+    font-size: 2.986rem;
+    font-weight: 700;
+  }
+  .header-2{
+    font-size: 2.488rem;
+    font-weight: 700;
+  }
+  .header-3{
+    font-size: 2.074rem;
+    font-weight: 600;
+  }
+  .header-4{
+    font-size: 1.728rem;
+    font-weight: 600;
+  }
+  .header-5{
+    font-size: 1.44rem;
+    font-weight: 600;
+  }
+  .header-6{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  // Text color
+  .text-white{
+    color: white;
+  }
+  .text-black{
+    color: black;
+  }

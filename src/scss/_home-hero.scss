@@ -1,0 +1,15 @@
+.hero{
+    /* background-color: lightgreen; */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cont-hero{
+        max-width: 820px;
+        margin: 0 auto;
+        .header-1{
+            font-size: 3.2rem;
+        }
+    }
+}

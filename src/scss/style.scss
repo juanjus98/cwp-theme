@@ -55,6 +55,8 @@
 // scss-docs-end import-stack
 
 // Your custom styles here
-body{
-    background: lightgreen;
-}
+@import "variables";
+@import "base";
+@import "header"; //Navmenu
+@import "button";
+@import "home-hero";
