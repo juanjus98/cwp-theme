@@ -116,8 +116,8 @@ add_action('after_setup_theme', 'wp_theme_antuca_content_width', 0);
  */
 function wp_theme_antuca_scripts()
 {
-    wp_enqueue_style('wp-theme-antuca-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION);
-    wp_enqueue_script('wp-theme-antuca-script', get_template_directory_uri() . '/dist/js/main.js', array(), _S_VERSION, true);
+    wp_enqueue_style('wp-theme-antuca-style', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION);
+    wp_enqueue_script('wp-theme-antuca-script', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
