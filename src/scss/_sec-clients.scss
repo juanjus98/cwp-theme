@@ -1,0 +1,32 @@
+.sec-clients-logos {
+  /* background-color: #6e00e3;
+  min-height: var(--slide-logo-height); */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow-x: clip;
+
+  background: linear-gradient(90deg, #000 8.05%, #90f 97.73%);
+
+
+  .slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    padding: 2.19rem 0 1.87rem;
+
+    .slide_track {
+      display: inline-block;
+      animation: scroll 50s linear infinite;
+    }
+
+    img {
+      display: inline-block;
+      width: auto;
+      max-height: 62px;
+      margin: 0 2.56rem;
+    }
+  }
+
+}

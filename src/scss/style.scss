@@ -3,7 +3,13 @@
 
 // Your custom styles here
 @import "variables";
+@import "mixins";
+@import "animations";
 @import "base";
-@import "header"; //Navmenu
+@import "header";
+@import "footer";
 @import "button";
+
+//Home
 @import "home-hero";
+@import "sec-clients";

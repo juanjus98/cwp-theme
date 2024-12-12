@@ -31,13 +31,12 @@ function cwp_theme_menu()
     ));
 }
 
-function register_cta_menu() {
+/* function register_cta_menu() {
     register_nav_menu('cta-menu', __('Menú CTA'));
 }
-add_action('after_setup_theme', 'register_cta_menu');
+add_action('after_setup_theme', 'register_cta_menu'); */
 
 /* Custom logo mobile */
-
 function themename_customize_register( $wp_customize ) {
     // Añadir el control para subir el logotipo móvil en la sección "title_tagline"
     $wp_customize->add_setting( 'mobile_logo', array(
@@ -80,3 +79,26 @@ function add_custom_classes_to_cta_menu_links($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_custom_classes_to_cta_menu_links', 10, 3);
+
+// Agregar clase al menu-item
+function add_menu_item_class($classes, $item, $args) {
+    if($args->theme_location == 'menu-2' || $args->theme_location == 'menu-1') {
+        $classes[] = 'nav-item';
+    }
+    return $classes;
+ }
+ add_filter('nav_menu_css_class', 'add_menu_item_class', 10, 3);
+ 
+ // Agregar clase al link  
+ function add_menu_link_class($atts, $item, $args) {
+    if($args->theme_location == 'menu-2' || $args->theme_location == 'menu-1') {
+        $atts['class'] = 'nav-link'; // Agrega la clase que necesites
+    }
+    return $atts;
+ }
+ add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 3);
+
+/*  function add_font_awesome() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+}
+add_action('wp_enqueue_scripts', 'add_font_awesome'); */

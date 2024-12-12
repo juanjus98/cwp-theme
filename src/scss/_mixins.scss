@@ -1,0 +1,6 @@
+@mixin primary-font-custom($size: 1rem, $weight: 400) {
+  font-family: "Plus Jakarta Sans";
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+}

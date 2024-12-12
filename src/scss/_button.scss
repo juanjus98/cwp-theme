@@ -1,15 +1,46 @@
-.btn-cta{
-    @include button-variant(
-    $background: $cst-color-2,
+.btn-primary-cta {
+  /* @include button-variant(
+    $background:
+      linear-gradient(
+        90deg,
+        rgba(153, 0, 255, 0.25) 0%,
+        rgba(92, 0, 153, 0.25) 100%
+      ),
     $border: $cst-color-2,
     $hover-background: darken($cst-color-2, 7.5%),
     $hover-border: darken($cst-color-2, 10%),
     $active-background: darken($cst-color-2, 10%),
     $active-border: darken($cst-color-2, 12.5%)
-  );
+  ); */
   color: white;
   font-weight: 600;
-  &:hover{
+
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, rgba(153, 0, 255, 0.25) 0%, rgba(92, 0, 153, 0.25) 100%);
+
+  box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(7.5px);
+
+  @include primary-font-custom(1.125rem, 800);
+  line-height: 0.875rem;
+
+  padding: 1.12rem 1.56rem;
+
+  &:hover {
     color: white;
+    background: linear-gradient(90deg, rgba(153, 0, 255, 0.55) 0%, rgba(92, 0, 153, 0.55) 100%);
+  }
+
+  position: relative;
+
+  &::after{
+    content: '';
+    background-image: url(../images/right-arrow-white.svg);
+    background-repeat: no-repeat;
+    width: 0.72rem;
+    height: 0.72rem;
+    background-size: contain;
+    display: inline-block;
+    margin-left: 0.44rem;
   }
 }

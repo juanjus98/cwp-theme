@@ -1,19 +1,27 @@
-.hero{
-    /* background-color: lightgreen; */
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero {
+  /* background-color: lightgreen; */
+  /* height: 90vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background: $cst-color-1;
-    /* background-image: url('../images/pattern.png');
+  background: $cst-color-1;
+  /* background-image: url('../images/pattern.png');
     background-repeat: repeat; */
 
-    .cont-hero{
-        max-width: 820px;
-        margin: 0 auto;
-        .header-1{
-            font-size: 3.2rem;
-        }
+  background-image: var(--desktop-bg);
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+
+  min-height: 51.625rem;
+
+  .cont-hero {
+    /* max-width: 820px; */
+    .header-1 {
+      @include primary-font-custom(6.25rem, 800);
+      line-height: 5rem;
+      white-space: pre-line;
     }
+  }
 }

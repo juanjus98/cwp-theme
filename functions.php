@@ -45,7 +45,9 @@ function wp_theme_antuca_setup()
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         array(
-            'menu-1' => esc_html__('Primary', 'wp-theme-antuca'),
+            'menu-1' => esc_html__('Menú principal izquierda', 'wp-theme-antuca'),
+            'menu-2' => esc_html__('Menú principal derecha', 'wp-theme-antuca'),
+            'menu-3' => esc_html__('Menú footer', 'wp-theme-antuca'),
         )
     );
 
@@ -138,4 +140,13 @@ add_action('wp_enqueue_scripts', 'wp_theme_antuca_scripts');
 /**
  * Customizer additions.
  */
+require_once get_template_directory() . '/inc/class-theme-social-customizer.php';
 require get_template_directory() . '/inc/customizer.php';
+
+/* Tipo de servicios */
+/* require_once get_template_directory() . '/inc/custom-services.php'; */
+
+/**
+ * Incluir Custom Post Types
+ */
+require_once get_template_directory() . '/inc/post-types.php';
