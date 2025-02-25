@@ -1,0 +1,92 @@
+.sec-services {
+  position: relative;
+  padding-top: 5.6rem;
+  padding-bottom: 9.8rem;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  &::before {
+    content: "Servicios";
+    font-family: "Plus Jakarta Sans";
+    font-size: 21.875rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 18.75rem;
+    background: linear-gradient(
+      90deg,
+      rgba(92, 0, 153, 0.1) 20.5%,
+      rgba(153, 0, 255, 0.1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .cont-desc {
+    padding: 4.6rem 1rem 0 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+
+    .header-2 {
+      /* .text-line-1 {
+        @include primary-font-custom(1.875rem, 300);
+        line-height: 1.875rem;
+      } */
+    }
+  }
+
+  /* swiper */
+  .swiper-container {
+    padding-left: 6rem;
+    min-width: 58.5rem;
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+      min-width: 36rem;
+    }
+
+    .swiper-button-prev {
+      left: 1.2rem;
+      background-color: transparent;
+      border: none;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    .swiper-button-next {
+      display: none;
+      background-color: transparent;
+      border: none;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+  .swiper-services {
+    padding: 1.2rem 0;
+    .swiper-wrapper {
+      .swiper-slide {
+        width: 13.3125rem;
+      }
+    }
+  }
+
+  .custom-card-1 {
+    width: 13.3125rem;
+  }
+}

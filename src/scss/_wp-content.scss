@@ -1,0 +1,92 @@
+.content-description,
+.content-area {
+  p {
+    color: white;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    margin-bottom: 3rem;
+    strong {
+      font-weight: 800;
+      color: $cst-color-4;
+    }
+  }
+  h1 {
+    color: white;
+    @include header-style(
+      $desktop-size: 6.25rem,
+      $mobile-size: 3.75rem,
+      $line-height-desktop: 5rem,
+      $line-height-mobile: 3.75rem
+    );
+  }
+  h2 {
+    color: white;
+    @include header-style(
+      $desktop-size: 3.75rem,
+      $mobile-size: 2.5rem,
+      $line-height-desktop: 3rem,
+      $line-height-mobile: 2rem
+    );
+  }
+  h3 {
+    color: white;
+    @include header-style(
+      $desktop-size: 2.5rem,
+      $mobile-size: 1.875rem,
+      $line-height-desktop: 2rem,
+      $line-height-mobile: 1rem
+    );
+  }
+
+  h4 {
+    color: white;
+    @include header-style(
+      $desktop-size: 1.875rem,
+      $mobile-size: 1.5rem,
+      $line-height-desktop: 1rem,
+      $line-height-mobile: 1rem
+    );
+  }
+
+  h5 {
+    color: white;
+    @include header-style(
+      $desktop-size: 1.5rem,
+      $mobile-size: 1.25rem,
+      $line-height-desktop: 1rem,
+      $line-height-mobile: 1rem
+    );
+  }
+
+  h6 {
+    color: white;
+    @include header-style(
+      $desktop-size: 1.25rem,
+      $mobile-size: 1rem,
+      $line-height-desktop: 1rem,
+      $line-height-mobile: 1rem
+    );
+  }
+
+  .wp-block-heading {
+    margin-bottom: 3rem;
+  }
+
+  .wp-block-cover {
+    margin-bottom: 2.2rem;
+    img {
+      border-radius: 1.2rem;
+    }
+  }
+
+  .wp-block-image{
+    margin-bottom: 2.2rem;
+    img {
+      border-radius: 1.2rem;
+    }
+  }
+
+  .wp-block-embed{
+    margin-bottom: 2.2rem;
+  }
+}

@@ -1,0 +1,173 @@
+.sec-cards {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  /* background: rgba(yellow, 0.2); */
+  @include media-breakpoint-down(sm) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .content-description {
+    margin-bottom: 3.8rem;
+    .header-2 {
+      max-width: 32rem;
+      margin: 0 auto;
+      /* margin-bottom: 2.8rem; */
+    }
+
+    .parraf {
+      max-width: 790px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .swiper-container {
+    /* padding-left: 6rem;
+    min-width: 58.5rem; */
+
+    /* .swiper-button-prev {
+      left: 1.2rem;
+    }
+
+    .swiper-button-next {
+      display: none;
+    } */
+
+    @include media-breakpoint-down(sm) {
+      min-width: 36rem;
+    }
+  }
+  .swiper-cards-page {
+    /* padding: 1.2rem 0; */
+    .swiper-wrapper {
+      .swiper-slide {
+        /* width: 16.70331rem; */
+        @include media-breakpoint-down(sm) {
+          width: 13.3125rem;
+        }
+      }
+    }
+  }
+
+  .custom-card-1 {
+    /* width: 16.70331rem; */
+    @include media-breakpoint-down(sm) {
+      width: 13.3125rem;
+    }
+    .card-body {
+      @include media-breakpoint-down(sm) {
+        top: auto;
+        bottom: 1.94rem;
+      }
+
+      /* .card-text {
+        @include primary-font-custom(2rem, 700);
+        line-height: 1.5rem;
+      } */
+    }
+  }
+
+  &.sec-cards-icons {
+    background: rgba(black, 0.2);
+
+    .custom-card-1 {
+      /* @include media-breakpoint-down(sm) {
+        width: 13.3125rem;
+      } */
+      padding-top: 5.6rem;
+      padding-bottom: 3rem;
+
+      border-radius: 2.1875rem;
+      border: 2px solid $cst-color-5;
+      box-shadow: 8px 10px 9.8px 0px rgba(0, 0, 0, 0.35);
+      background: transparent;
+
+      max-height: 26.25rem;
+      overflow: hidden;
+
+      @include media-breakpoint-down(sm) {
+        max-height: initial;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      .card-img {
+        max-width: 100%;
+        width: fit-content;
+        max-height: 5.68788rem;
+        flex-shrink: 0;
+        margin: 0 auto;
+        margin-bottom: 1.5rem;
+
+        @include media-breakpoint-down(sm) {
+          max-height: 4rem;
+        }
+      }
+      .card-body {
+        position: relative;
+        bottom: initial;
+        top: initial;
+        max-height: initial;
+        padding: 0 1.5rem;
+        /* @include media-breakpoint-down(sm) {
+          top: auto;
+          bottom: 1.94rem;
+        } */
+
+        .card-text {
+          @include primary-font-custom(1.375rem, 800);
+          line-height: 1.375rem;
+          max-width: 11.8rem;
+          margin: 0 auto;
+          margin-bottom: 0.8rem;
+          height: 3.9375rem;
+          overflow: hidden;
+
+          @include media-breakpoint-down(sm) {
+            height: 3rem;
+            font-size: 1.2rem;
+          }
+        }
+
+        .parraf {
+          height: 5.875rem;
+          overflow: hidden;
+          @include primary-font-custom(1.125rem, 400);
+          line-height: 1.125rem;
+          @include media-breakpoint-down(sm) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      left: -4rem;
+    }
+    .swiper-button-next {
+      right: -4rem;
+    }
+  }
+}
+
+// .page-template-page-b-content
+.page-template-page-b-content {
+  .sec-cards {
+    .content-description {
+      /* margin-bottom: 3.8rem; */
+      .header-2 {
+        max-width: 100%;
+      }
+
+      .parraf {
+        /* max-width: 790px; */
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.sec-benefits-page {
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .rounded {
+    border-radius: 2.1875rem !important;
+    box-shadow: 8px 10px 9.8px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  .header-2 {
+    margin-bottom: 3.6rem;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .benefit-card {
+    .benefit-icon {
+      margin-right: 1.8rem;
+      .icon-image {
+        max-width: 3.7625rem;
+      }
+    }
+
+    .header-3 {
+      @include primary-font-custom(1.3rem, 800);
+      color: $cst-color-5;
+      line-height: 1.375rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .parraf {
+      @include primary-font-custom(1.125rem, 400);
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .container-cta {
+    max-width: 56.375rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    .parraf {
+      @include primary-font-custom(1.125rem, 500);
+      margin-bottom: 1.6rem;
+      line-height: 1.375rem;
+      margin-bottom: 2.6rem;
+    }
+  }
+}

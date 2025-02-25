@@ -1,0 +1,59 @@
+.sec-clients-page {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 8.5rem;
+  overflow: hidden;
+  /* background: rgba(yellow, 0.2); */
+
+  /* @include media-breakpoint-down(sm) {
+    padding-bottom: 2rem;
+  } */
+
+  .content-description {
+    margin-bottom: 6rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 3rem;
+    }
+
+    .header-2 {
+      margin: 0 auto;
+    }
+
+    .parraf {
+      max-width: 790px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .content-clients {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .logo-client {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .logo-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 3.8rem;
+        display: block;
+
+        @include media-breakpoint-down(sm) {
+          max-height: 3.2rem;
+        }
+      }
+    }
+  }
+}

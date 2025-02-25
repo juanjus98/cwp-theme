@@ -1,10 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
+
+  background-image: url(../images/bg-home-2.webp);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: black;
+
+  @include media-breakpoint-down(sm) {
+    background: black;
+  }
+
+  &.page-template-page-services {
+    background-image: url(../images/bg-services-page.webp);
+  }
+
+  &.page-template-page-b-content {
+    background: black;
+  }
+
+  &.page-template-page-workus {
+    background-image: url(../images/bg-workus-page.webp);
+  }
+
+  &.page-template-page-contactus {
+    background-image: url(../images/bg-contact-page.webp);
+  }
+
+  &.single{
+    background-attachment: fixed;
+  }
+  
 }
 
 // Fonts
@@ -16,116 +47,326 @@ body {
 
 //.container
 @include media-breakpoint-up(xxl) {
-  .container{
-      max-width: $max-width-container;
+  .container {
+    max-width: $max-width-container;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .container {
+    padding-right: 2.8rem;
+    padding-left: 2.8rem;
   }
 }
 
-.bg-1{
-    background-color: $cst-color-2;
-    color: white;
+.bg-1 {
+  background-color: $cst-color-2;
+  color: white;
 }
 
-.bg-2{
-    background-color: $cst-color-2;
+.bg-2 {
+  background-color: $cst-color-2;
 }
 
 .mobile-logo {
-    display: none;
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
-}
-
-@include media-breakpoint-down(md) {
-    .custom-logo-link {
-        display: none;
-    }
-    .mobile-logo {
-        display: block;
-    }
+  display: none;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Estilos base para todos los encabezados */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.2;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    font-weight: 600; /* Semi-bold */
-    color: #333; /* Color oscuro para mejor legibilidad */
-  }
-  
-  /* Estilos específicos para cada nivel de encabezado */
-  h1 {
-    font-size: 2.5rem; /* 40px si el tamaño base es 16px */
-    letter-spacing: -0.5px;
-  }
-  
-  h2 {
-    font-size: 2rem; /* 32px */
-    letter-spacing: -0.3px;
-  }
-  
-  h3 {
-    font-size: 1.75rem; /* 28px */
-  }
-  
-  h4 {
-    font-size: 1.5rem; /* 24px */
-    font-weight: 500; /* Medium */
-  }
-  
-  h5 {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 500; /* Medium */
-  }
-  
-  h6 {
-    font-size: 1rem; /* 16px */
-    font-weight: 500; /* Medium */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  letter-spacing: -0.3px;
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500; /* Medium */
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 500; /* Medium */
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
 @include media-breakpoint-down(md) {
-    h1 { font-size: 2rem; } /* 32px */
-    h2 { font-size: 1.75rem; } /* 28px */
-    h3 { font-size: 1.5rem; } /* 24px */
-    h4 { font-size: 1.25rem; } /* 20px */
-    h5 { font-size: 1.1rem; } /* ~18px */
-    h6 { font-size: 1rem; } /* 16px */
+  h1 {
+    font-size: 2rem;
+  } /* 32px */
+  h2 {
+    font-size: 1.75rem;
+  } /* 28px */
+  h3 {
+    font-size: 1.5rem;
+  } /* 24px */
+  h4 {
+    font-size: 1.25rem;
+  } /* 20px */
+  h5 {
+    font-size: 1.1rem;
+  } /* ~18px */
+  h6 {
+    font-size: 1rem;
+  } /* 16px */
+}
+
+.header-1 {
+  @include header-style(
+    $desktop-size: 6.25rem,
+    $mobile-size: 3.75rem,
+    $line-height-desktop: 5rem,
+    $line-height-mobile: 3.75rem
+  );
+}
+.header-2 {
+  @include primary-font-custom(3.75rem, 800);
+  line-height: 3.75rem;
+  margin-bottom: 1.75rem;
+
+  .text-line-1 {
+    @include primary-font-custom(1.875rem, 300);
+    line-height: 1.875rem;
   }
 
-  .header-1{
-    font-size: 2.986rem;
-    font-weight: 700;
+  @include media-breakpoint-down(sm) {
+    @include primary-font-custom(2.5rem, 800);
+    line-height: 2.5rem;
+
+    .text-line-1 {
+      @include primary-font-custom(1.25rem, 300);
+      line-height: 1.25rem;
+    }
   }
-  .header-2{
-    font-size: 2.488rem;
-    font-weight: 700;
+}
+.header-3 {
+  font-size: 2.074rem;
+  font-weight: 600;
+}
+.header-4 {
+  font-size: 1.728rem;
+  font-weight: 600;
+}
+.header-5 {
+  font-size: 1.44rem;
+  font-weight: 600;
+}
+.header-6 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+// Parraf
+p,
+.parraf {
+  @include primary-font-custom(1.125rem, 500);
+  line-height: 1.375rem;
+
+  @include media-breakpoint-down(sm) {
+    @include primary-font-custom(1rem, 500);
   }
-  .header-3{
-    font-size: 2.074rem;
-    font-weight: 600;
+}
+
+// Text color
+.text-white {
+  color: white;
+}
+.text-black {
+  color: black;
+}
+
+.parraf-1 {
+  @include primary-font-custom(2rem, 800);
+  line-height: 2rem;
+
+  @include media-breakpoint-down(sm) {
+    @include primary-font-custom(1.5rem, 800);
+    line-height: 1.75rem;
   }
-  .header-4{
-    font-size: 1.728rem;
-    font-weight: 600;
-  }
-  .header-5{
-    font-size: 1.44rem;
-    font-weight: 600;
-  }
-  .header-6{
-    font-size: 1.2rem;
-    font-weight: 600;
+}
+
+.parraf-2 {
+  @include primary-font-custom(1rem, 400);
+  line-height: 1.25rem;
+}
+
+/* Custom-card-1 */
+.custom-card-1 {
+  border-radius: 2.1875rem;
+  /* width: 13.3125rem; */
+  flex-shrink: 0;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  box-shadow: 8px 10px 9.8px 0px rgba(0, 0, 0, 0.35);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2.1875rem;
+    background: linear-gradient(180deg, rgba(153, 0, 255, 0) 44.65%, #90f 100%),
+      rgba(0, 0, 0, 0);
   }
 
-  // Text color
-  .text-white{
-    color: white;
+  .card-img {
+    border-radius: 0;
+    transition: transform 0.3s ease-in-out;
+    border: none;
   }
-  .text-black{
-    color: black;
+
+  &:hover {
+    .card-img {
+      transform: scale(1.1);
+      border: none;
+    }
   }
+
+  .card-body {
+    position: absolute;
+    bottom: auto;
+    padding: 0 1.2rem;
+    z-index: 1;
+    width: 100%;
+
+    top: 20.3rem;
+    max-height: 5rem;
+    overflow: hidden;
+
+    .card-text {
+      @include primary-font-custom(1.375rem, 700);
+      line-height: 1.5rem;
+    }
+  }
+}
+
+/* .swiper-container */
+.swiper-container {
+  position: relative;
+}
+
+/* swiper-button */
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.6rem;
+  height: 2.6rem;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0;
+  z-index: 1;
+}
+
+.swiper-button-prev {
+  background-image: url(../images/swiper-button-prev.svg);
+  left: 0;
+}
+.swiper-button-next {
+  background-image: url(../images/swiper-button-next.svg);
+  right: 0;
+}
+
+// Social icons section
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin-bottom: 2.75rem;
+  @include media-breakpoint-down(sm) {
+    padding-top: 5rem;
+  } */
+}
+
+// Individual social icons
+.social-icon {
+  width: $icon-size;
+  height: $icon-size;
+  margin: 0 $icon-margin;
+
+  @include media-breakpoint-down(sm) {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0 1rem;
+  }
+
+  @include social-icon("discord");
+
+  // Remove margin from first and last icons
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  // Social icon variants
+  &.instagram {
+    @include social-icon("ig");
+  }
+  &.linkedin {
+    @include social-icon("in");
+  }
+  &.discord {
+    @include social-icon("discord");
+  }
+  &.youtube {
+    @include social-icon("youtube");
+  }
+
+  // Hover effect
+  transition: filter 0.3s ease;
+  &:hover {
+    filter: opacity($icon-hover-opacity);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.client-logo-link:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}

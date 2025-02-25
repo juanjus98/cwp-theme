@@ -1,71 +1,96 @@
-// Variables
-$footer-padding: 4.8rem 0 3.5rem;
-$icon-size: 2.6rem;
-$icon-margin: 1.88rem;
-$icon-hover-opacity: 0.86;
-
-// Mixins
-@mixin social-icon($image) {
- background: url(../images/icon-#{$image}.webp) center/contain no-repeat;
-}
-
 // Footer styles
 .footer {
- background: black;
- padding: $footer-padding;
- color: white;
+  background: black;
+  padding: $footer-padding;
+  color: white;
+  
+  @include media-breakpoint-down(sm) {
+    padding: 4.8rem 0 2rem;
+  }
 
- // Logo
- .custom-logo {
-   max-height: 9.5rem;
- }
+  // Logo
+  .custom-logo {
+    max-height: 9.5rem;
+    width: auto;
 
- // Social icons section
- .social-icons {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
-   margin-bottom: 2.75rem;
- }
-
- // Individual social icons
- .social-icon {
-   width: $icon-size;
-   height: $icon-size;
-   margin: 0 $icon-margin;
-   @include social-icon('discord');
-   
-   // Remove margin from first and last icons
-   &:first-child { margin-left: 0; }
-   &:last-child { margin-right: 0; }
-
-   // Social icon variants
-   &.instagram { @include social-icon('ig'); }
-   &.linkedin { @include social-icon('in'); }
-   &.discord { @include social-icon('discord'); }
-   &.youtube { @include social-icon('youtube'); }
-
-   // Hover effect
-   transition: filter 0.3s ease;
-   &:hover {
-     filter: opacity($icon-hover-opacity);
-   }
- }
-
- .navbar-menu-footer{
-    .menu-item{
-        margin-bottom: 1.56rem;
-        &:last-child{
-            margin-bottom: 0;
-        }
-        a{
-            color: white;
-            text-decoration: none;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
+    @include media-breakpoint-down(sm) {
+      max-height: 6.07619rem;
+      width: auto;
     }
- }
+  }
+
+  // Social icons section
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.75rem;
+    @include media-breakpoint-down(sm) {
+      padding-top: 5rem;
+    }
+  }
+
+  // Individual social icons
+  .social-icon {
+    width: $icon-size;
+    height: $icon-size;
+    margin: 0 $icon-margin;
+
+    @include media-breakpoint-down(sm) {
+      width: 2.2rem;
+      height: 2.2rem;
+      margin: 0 1rem;
+    }
+
+    @include social-icon("discord");
+
+    // Remove margin from first and last icons
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // Social icon variants
+    &.instagram {
+      @include social-icon("ig");
+    }
+    &.linkedin {
+      @include social-icon("in");
+    }
+    &.discord {
+      @include social-icon("discord");
+    }
+    &.youtube {
+      @include social-icon("youtube");
+    }
+
+    // Hover effect
+    transition: filter 0.3s ease;
+    &:hover {
+      filter: opacity($icon-hover-opacity);
+    }
+  }
+
+  .navbar-menu-footer {
+    .menu-item {
+      margin-bottom: 1.56rem;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1.2rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }

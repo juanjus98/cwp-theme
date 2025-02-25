@@ -4,3 +4,21 @@
   font-style: normal;
   font-weight: $weight;
 }
+
+//Soccial icon
+@mixin social-icon($image) {
+  background: url(../images/icon-#{$image}.webp) center/contain no-repeat;
+}
+
+
+// Mixin para headers
+@mixin header-style($desktop-size, $mobile-size, $weight: 800, $line-height-desktop: null, $line-height-mobile: null, $margin-bottom: 3.5rem) {
+  @include primary-font-custom($desktop-size, $weight);
+  line-height: $line-height-desktop or $desktop-size;
+  margin-bottom: $margin-bottom;
+
+  @include media-breakpoint-down(sm) {
+    @include primary-font-custom($mobile-size, $weight);
+    line-height: $line-height-mobile or $mobile-size;
+  }
+}

@@ -1,0 +1,32 @@
+.sec-header {
+  position: relative;
+  margin-top: 12rem;
+  margin-bottom: 3rem;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 10rem;
+  }
+
+  .header-1 {
+    margin-bottom: 2.8rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  //width: 56.375rem;
+  .content-description {
+    max-width: 56rem;
+  }
+}
+
+// .page-template-page-workus
+.page-template-page-workus {
+  .sec-header {
+    margin-bottom: 5rem;
+    .content-description {
+      max-width: 59.375rem;
+    }
+  }
+}

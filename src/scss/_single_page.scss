@@ -1,0 +1,17 @@
+.single-page {
+  position: relative;
+  margin-top: 12rem;
+  margin-bottom: 0rem;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 10rem;
+  }
+  /* background: rgba(red, 0.4); */
+
+  .content-main {
+    background: rgba(black,.77);
+    color: white;
+
+    padding: 0rem 3rem 8rem 3rem;
+  }
+}

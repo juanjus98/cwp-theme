@@ -1,6 +1,9 @@
 // Import Bootstrap - Personalizado
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+//Swiper
+@import '../../node_modules/swiper/swiper';
+
 // Your custom styles here
 @import "variables";
 @import "mixins";
@@ -10,6 +13,25 @@
 @import "footer";
 @import "button";
 
+// Wordpress content custom
+@import "wp-content";
+
 //Home
 @import "home-hero";
 @import "sec-clients";
+@import "sec-services";
+@import "sec-talents";
+@import "sec-aboutus";
+@import "sec-eligieron";
+@import "sec-form";
+
+// Pages
+@import "sec-header";
+@import "sec-services-page";
+@import "sec-cards";
+@import "sec-accordion";
+@import "sec-logos-page";
+@import "sec-clients-page";
+@import "sec-jumbotron-page";
+@import "sec-benefits-page";
+@import "single_page";

@@ -1,0 +1,17 @@
+{
+    "name": "juanj/cwp-theme",
+    "autoload": {
+        "psr-4": {
+            "Juanj\\CwpTheme\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "juanjus98",
+            "email": "juanjus98@gmail.com"
+        }
+    ],
+    "require": {
+        "htmlburger/carbon-fields": "^3.6"
+    }
+}

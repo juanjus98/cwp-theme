@@ -4,15 +4,16 @@
   "scripts": {
     "css": "sass src/scss/style.scss:assets/css/style.css --style=compressed",
     "css:watch": "sass src/scss/style.scss:assets/css/style.css --watch",
-    "js:concat": "concat -o assets/js/main.js node_modules/jquery/dist/jquery.min.js node_modules/@popperjs/core/dist/umd/popper.min.js node_modules/bootstrap/dist/js/bootstrap.min.js src/js/main.js",
+    "js:concat": "concat -o assets/js/main.js node_modules/jquery/dist/jquery.min.js node_modules/@popperjs/core/dist/umd/popper.min.js node_modules/bootstrap/dist/js/bootstrap.min.js node_modules/swiper/swiper-bundle.min.js node_modules/motion/dist/motion.js src/js/main.js",
     "js:uglify": "uglifyjs assets/js/main.js -o assets/js/main.min.js",
     "js": "npm run js:concat && npm run js:uglify",
-    "js:watch": "onchange 'src/js/**/*.js' -- npm run js",
+    "js:watch": "onchange 'src/js/**/*' -- npm run js",
     "watch": "npm-run-all --parallel css:watch js:watch",
     "build": "npm-run-all css js"
   },
   "devDependencies": {
     "concat": "^1.0.3",
+    "motion": "^12.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "sass": "^1.58.3",
@@ -21,6 +22,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "swiper": "^11.0.5"
   }
 }

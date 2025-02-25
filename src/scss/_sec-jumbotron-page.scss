@@ -1,0 +1,24 @@
+.sec-jumbotron-page {
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .header-2 {
+    margin-bottom: 3rem;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .parraf {
+    max-width: 56.375rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+}

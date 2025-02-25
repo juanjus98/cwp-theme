@@ -1,13 +1,9 @@
 .hero {
-  /* background-color: lightgreen; */
-  /* height: 90vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: $cst-color-1;
-  /* background-image: url('../images/pattern.png');
-    background-repeat: repeat; */
+  background-color: transparent;
 
   background-image: var(--desktop-bg);
   background-size: cover;
@@ -16,12 +12,23 @@
 
   min-height: 51.625rem;
 
+  @include media-breakpoint-down(sm) {
+    background-image: var(--mobile-bg);
+    min-height: 59.75rem;
+  }
+
   .cont-hero {
-    /* max-width: 820px; */
     .header-1 {
       @include primary-font-custom(6.25rem, 800);
       line-height: 5rem;
       white-space: pre-line;
+      transform: translateX(-100px);
+      opacity: 0;
+      @include media-breakpoint-down(sm) {
+        @include primary-font-custom(3.75rem, 800);
+        line-height: 3.75rem;
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }

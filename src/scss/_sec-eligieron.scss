@@ -1,0 +1,144 @@
+.sec-eligieron {
+  position: relative;
+  padding-bottom: 0rem;
+
+  .cont-desc {
+    .header-2 {
+      margin-bottom: 1.4rem;
+
+      /* .text-line-1 {
+        @include primary-font-custom(1.875rem, 300);
+        line-height: 1.875rem;
+      } */
+    }
+
+    .parraf-1 {
+      max-width: 43.25rem;
+    }
+  }
+
+  /* swiper */
+  .swiper-container {
+    position: relative;
+    margin: 0 auto;
+    /* background: rgba(green, 0.3); */
+
+    .swiper-button-prev {
+      left: 6.2rem;
+      @include media-breakpoint-down(sm) {
+        left: -0.3rem;
+      }
+    }
+    .swiper-button-next {
+      right: 6.2rem;
+      @include media-breakpoint-down(sm) {
+        right: -0.3rem;
+      }
+    }
+  }
+
+  .swiper-eligieron {
+    width: 100%;
+    position: relative;
+    max-width: 1178px;
+
+    .swiper-slide {
+      transform: scale(0.1);
+      transition: transform 0.3s;
+      position: relative;
+
+      width: 35.1875rem;
+      height: 22.3125rem;
+      border-radius: 2.1875rem;
+
+      background: linear-gradient(
+        180deg,
+        rgba(122, 0, 204, 1) 0%,
+        rgba(61, 0, 102, 1) 100%
+      );
+      box-shadow: 16px 14px 34px 0px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(7.5px);
+      overflow: hidden;
+
+      filter: brightness(0.4);
+      transition: filter 0.3s ease;
+
+      @include media-breakpoint-down(sm) {
+        width: 86%;
+        height: auto;
+      }
+
+      &.swiper-slide-active {
+        transform: scale(1);
+        filter: opacity(1);
+        /* transition: filter 0.3s ease-in-out; */
+
+        background: linear-gradient(
+          180deg,
+          rgba(122, 0, 204, 0.5) 0%,
+          rgba(61, 0, 102, 0.5) 100%
+        );
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2.2rem;
+        right: 2.8rem;
+        width: 8.25rem;
+        height: 6.49688rem;
+        background-image: url(../images/bg-quote.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include media-breakpoint-down(sm) {
+          top: 2rem;
+          right: 2.2rem;
+          width: 6.6rem;
+          height: 5.2rem;
+        }
+      }
+    }
+
+    .slide-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      /* img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      } */
+
+      .slide-text {
+        padding: 6.2rem 3.2rem 0;
+        max-height: 17.6rem;
+        overflow: hidden;
+
+        @include media-breakpoint-down(sm) {
+          padding: 5rem 2.2rem 7rem;
+          max-height: initial;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .cont-logo {
+        position: absolute;
+        max-height: 3.625rem;
+        right: 1.44rem;
+        bottom: 1.44rem;
+        .img-logo {
+          width: auto;
+          max-height: 3.625rem;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

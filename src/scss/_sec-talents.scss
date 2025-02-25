@@ -1,0 +1,75 @@
+.sec-talents {
+  position: relative;
+  /* background: rgba(pink, 0.3); */
+  /* padding-top: 5.6rem; */
+  padding-bottom: 6.7rem;
+  margin-top: -5rem;
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 6rem;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .cont-desc {
+    /* padding: 5rem 4rem 0 0; */
+    .header-2 {
+      margin-bottom: 3.8rem;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2.5rem;
+      }
+
+      /* .text-line-1 {
+        @include primary-font-custom(1.875rem, 300);
+        line-height: 1.875rem;
+      } */
+    }
+  }
+
+  .swiper-container {
+    /* padding-left: 6rem;
+    min-width: 58.5rem; */
+
+    /* .swiper-button-prev {
+      left: 1.2rem;
+    }
+
+    .swiper-button-next {
+      display: none;
+    } */
+
+    @include media-breakpoint-down(sm) {
+      min-width: 36rem;
+    }
+  }
+  .swiper-talentos {
+    /* padding: 1.2rem 0; */
+    .swiper-wrapper {
+      .swiper-slide {
+        width: 16.70331rem;
+        @include media-breakpoint-down(sm) {
+          width: 13.3125rem;
+        }
+      }
+    }
+  }
+
+  .custom-card-1 {
+    width: 16.70331rem;
+    @include media-breakpoint-down(sm) {
+      width: 13.3125rem;
+    }
+    .card-body {
+      @include media-breakpoint-down(sm) {
+        top: auto;
+        bottom: 1.94rem;
+      }
+
+      .card-text {
+        @include primary-font-custom(2rem, 700);
+        line-height: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.sec-form {
+  position: relative;
+  padding-top: 11.8rem;
+  padding-bottom: 11.8rem;
+  color: white;
+  overflow: hidden;
+  
+  @include media-breakpoint-down(sm) {
+    padding-top: 7.2rem;
+    padding-bottom: 7.2rem;
+  }
+
+  &.bg-image{
+    background-image: url(../images/bg-form.webp);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 963px;
+
+    @include media-breakpoint-down(sm) {
+      background-position: left bottom -6rem;
+      background-size: 563px;
+    }
+    
+  }
+
+  &::before {
+    content: "Contacto";
+
+    font-family: "Plus Jakarta Sans";
+    font-size: 22rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 18.75rem;
+
+    background: linear-gradient(
+      95deg,
+      rgba(92, 0, 153, 0) 32.03%,
+      rgba(153, 0, 255, 0.15) 99.73%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    bottom: -4.4rem;
+    margin: 0;
+    filter: brightness(0.5);
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .cont-desc {
+    .header-2 {
+      margin-bottom: 1.4rem;
+
+      .text-line-1 {
+        @include primary-font-custom(1.875rem, 300);
+        line-height: 1.875rem;
+      }
+    }
+  }
+
+  .cont-form {
+    max-width: 47.9375rem;
+
+    .form-label {
+      border-radius: 0.75rem;
+      background: $cst-color-1;
+      color: white;
+      @include primary-font-custom(0.9375rem, 500);
+      line-height: normal;
+      padding: 0.12rem 0.5rem;
+      margin: 0 0 0 1rem;
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 0.75rem;
+      background: rgba(84, 84, 84, 0.2);
+      border: none;
+      padding: 0.88rem 1.37rem;
+      margin-top: -0.7rem;
+      &:focus{
+        /* box-shadow: 0 0 0 .25rem rgba(black, .25); */
+        box-shadow: none;
+      }
+    }
+
+    .form-control {
+      color: rgba(255, 255, 255, 0.5);
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .form-select {
+      color: rgba(255, 255, 255, 0.5);
+      option {
+        background-color: rgba(black, 0.9);
+        &:hover {
+          background-color: $cst-color-1 !important;
+        }
+      }
+
+      appearance: none;
+      background-image: url(../images/select-arrow.svg);
+      background-position: right 1.4rem center;
+      background-repeat: no-repeat;
+    }
+
+    textarea.form-control {
+      max-height: 8.3125rem;
+    }
+  }
+}
+
+// .page-template-page-services
+.page-template-page-services .sec-form {
+  @include media-breakpoint-down(sm) {
+    padding-top: 2.2rem;
+    /* padding-bottom: 7.2rem; */
+  }
+}
+
+// .page-template-page-contactus
+.page-template-page-contactus {
+  .sec-form {
+    padding-top: 0;
+
+    .cont-form {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+  }
+}
