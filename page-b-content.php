@@ -13,6 +13,9 @@ get_header();
 // Hero
 get_template_part('parts/content', 'hero-home');
 
+/* Logos clientes carousel */
+get_template_part('parts/content', 'clientes-carousel');
+
 // Section logos
 get_template_part('parts/content', 'page-logos');
 
@@ -20,7 +23,7 @@ get_template_part('parts/content', 'page-logos');
 get_template_part('parts/content', 'page-cards');
 
 // Page clients
-get_template_part('parts/content', 'page-clientes');
+//get_template_part('parts/content', 'page-clientes');
 
 // Page Jumbotron
 get_template_part('parts/content', 'page-jumbotron');

@@ -4,18 +4,22 @@
   "scripts": {
     "css": "sass src/scss/style.scss:assets/css/style.css --style=compressed",
     "css:watch": "sass src/scss/style.scss:assets/css/style.css --watch",
+    "css:minify": "postcss assets/css/style.css -o assets/css/style.min.css",
     "js:concat": "concat -o assets/js/main.js node_modules/jquery/dist/jquery.min.js node_modules/@popperjs/core/dist/umd/popper.min.js node_modules/bootstrap/dist/js/bootstrap.min.js node_modules/swiper/swiper-bundle.min.js node_modules/motion/dist/motion.js src/js/main.js",
     "js:uglify": "uglifyjs assets/js/main.js -o assets/js/main.min.js",
     "js": "npm run js:concat && npm run js:uglify",
     "js:watch": "onchange 'src/js/**/*' -- npm run js",
     "watch": "npm-run-all --parallel css:watch js:watch",
-    "build": "npm-run-all css js"
+    "build": "npm-run-all css css:minify js"
   },
   "devDependencies": {
     "concat": "^1.0.3",
+    "cssnano": "^6.1.2",
     "motion": "^12.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.58.3",
     "uglify-js": "^3.17.4"
   },

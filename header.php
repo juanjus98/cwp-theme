@@ -49,7 +49,8 @@
                     <!-- Language Switcher -->
                     <?php if (function_exists('get_language_switcher')): ?>
                             <div class="my-auto language-selector" role="navigation" aria-label="<?php esc_attr_e('Language Switcher', 'BasherTheme'); ?>">
-                                <?php echo get_language_switcher(); ?>
+                                <?php //echo get_language_switcher(); ?>
+                                <?php custom_polylang_language_switcher(); ?>
                             </div>
                         <?php endif; ?>
 
@@ -104,8 +105,9 @@
 
                         <!-- Language Switcher -->
                         <?php if (function_exists('get_language_switcher')): ?>
-                            <div class="my-auto language-selector d-none d-md-block" role="navigation" aria-label="<?php esc_attr_e('Language Switcher', 'BasherTheme'); ?>">
-                                <?php echo get_language_switcher(); ?>
+                            <div class="my-auto ms-5 language-selector d-none d-md-block" role="navigation" aria-label="<?php esc_attr_e('Language Switcher', 'BasherTheme'); ?>">
+                                <?php //echo get_language_switcher(); ?>
+                                <?php custom_polylang_language_switcher(); ?>
                             </div>
                         <?php endif; ?>
 

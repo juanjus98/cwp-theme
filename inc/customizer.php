@@ -629,3 +629,144 @@ remove_action('wp_head', 'rsd_link');
 
 // Remover enlaces wlwmanifest
 remove_action('wp_head', 'wlwmanifest_link');
+
+/**
+ * Función personalizada para mostrar el selector de idiomas de Polylang
+ * utilizando un dropdown de Bootstrap 5
+ */
+function custom_polylang_language_switcher() {
+    // Verificar si Polylang está activo
+    if (!function_exists('pll_the_languages')) {
+        return;
+    }
+    
+    // Obtener el array de idiomas
+    $languages = pll_the_languages(array(
+        'raw' => 1,
+        'echo' => 0,
+        'hide_if_no_translation' => 1,
+        'hide_if_empty' => 1,
+        'show_flags' => 0,
+        'show_names' => 1,
+        'display_names_as' => 'slug'
+    ));
+    
+    // Si no hay idiomas o solo hay uno, no mostrar el selector
+    if (empty($languages) || count($languages) < 2) {
+        return;
+    }
+    
+    // Encontrar el idioma actual
+    $current_language = array_filter($languages, function($lang) {
+        return $lang['current_lang'] == 1;
+    });
+    $current_language = reset($current_language);
+    
+    // Generar el HTML para el dropdown de Bootstrap 5
+    ?>
+    <div class="dropdown language-dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <?php if ($current_language['flag']) : ?>
+                <!-- <img src="<?php //echo esc_url($current_language['flag']); ?>" alt="<?php //echo esc_attr($current_language['name']); ?>" width="20" height="15" class="me-1"> -->
+                <?php //echo $current_language['flag']; ?>
+            <?php endif; ?>
+            <?php echo esc_html($current_language['name']); ?>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="languageDropdown">
+            <?php foreach ($languages as $language) : ?>
+                <?php if (!$language['current_lang']) : ?>
+                    <li>
+                        <a class="dropdown-item" href="<?php echo esc_url($language['url']); ?>">
+                            <?php if ($language['flag']) : ?>
+                                <!-- <img src="<?php //echo esc_url($language['flag']); ?>" alt="<?php //echo esc_attr($language['name']); ?>" width="20" height="15" class="me-1"> -->
+                                <?php //echo $language['flag']; ?>
+                            <?php endif; ?>
+                            <?php echo esc_html($language['name']); ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php
+}
+
+/**
+ * Versión alternativa que muestra abreviaturas de idioma en lugar de nombres completos
+ */
+function custom_polylang_language_switcher_abbr() {
+    // Verificar si Polylang está activo
+    if (!function_exists('pll_the_languages')) {
+        return;
+    }
+    
+    // Obtener el array de idiomas
+    $languages = pll_the_languages(array(
+        'raw' => 1,
+        'echo' => 0,
+        'hide_if_empty' => 0,
+        'show_flags' => 1,
+        'display_names_as' => 'slug' // Usar slugs como abreviaturas
+    ));
+    
+    // Si no hay idiomas o solo hay uno, no mostrar el selector
+    if (empty($languages) || count($languages) < 2) {
+        return;
+    }
+    
+    // Encontrar el idioma actual
+    $current_language = array_filter($languages, function($lang) {
+        return $lang['current_lang'] == 1;
+    });
+    $current_language = reset($current_language);
+    
+    // Generar el HTML para el dropdown de Bootstrap 5
+    ?>
+    <div class="dropdown language-dropdown">
+        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <?php if ($current_language['flag']) : ?>
+                <img src="<?php echo esc_url($current_language['flag']); ?>" alt="<?php echo esc_attr($current_language['name']); ?>" width="20" height="15" class="me-1">
+            <?php endif; ?>
+            <?php echo strtoupper(esc_html($current_language['slug'])); ?>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+            <?php foreach ($languages as $language) : ?>
+                <?php if (!$language['current_lang']) : ?>
+                    <li>
+                        <a class="dropdown-item" href="<?php echo esc_url($language['url']); ?>">
+                            <?php if ($language['flag']) : ?>
+                                <img src="<?php echo esc_url($language['flag']); ?>" alt="<?php echo esc_attr($language['name']); ?>" width="20" height="15" class="me-1">
+                            <?php endif; ?>
+                            <?php echo strtoupper(esc_html($language['slug'])); ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php
+}
+
+/**
+ * Función para agregar estilos CSS necesarios para el selector de idiomas
+ */
+function custom_polylang_language_switcher_styles() {
+    ?>
+    <style>
+        .language-dropdown .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .language-dropdown .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .language-dropdown img {
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'custom_polylang_language_switcher_styles');

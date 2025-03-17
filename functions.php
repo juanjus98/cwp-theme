@@ -14,10 +14,10 @@ if (!defined('ABSPATH')) {
  * Cambia esto según tu entorno actual:
  * 'development' - Desarrollo local
  * 'staging' - Entorno de pruebas
- * 'production' - Entorno de producción
+ * '' - Entorno de producción
  */
 if (!defined('WP_ENVIRONMENT_TYPE')) {
-    define('WP_ENVIRONMENT_TYPE', 'development');
+    define('WP_ENVIRONMENT_TYPE', 'production');
 }
 
 // Definir constantes del tema

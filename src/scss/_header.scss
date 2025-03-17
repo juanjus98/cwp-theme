@@ -7,7 +7,6 @@
       padding-left: 1.8rem;
     }
   }
-
   .navbar {
     background-color: transparent;
     transition: all 0.3s ease;
@@ -32,7 +31,7 @@
       @include media-breakpoint-down(sm) {
         padding: 1rem 0;
       }
-      
+
       .site-branding {
         top: -0.6rem;
       }
@@ -236,6 +235,35 @@
     .navbar-toggler:focus {
       box-shadow: none;
       outline: none;
+    }
+  }
+}
+
+/* Langrage */
+.language-selector {
+  .language-dropdown {
+    .dropdown-toggle {
+      color: white;
+      text-transform: uppercase;
+      @include primary-font-custom(16px, 500);
+      border: none;
+      &:hover,&:focus,&:active {
+        background: rgba($cst-color-3,.9);
+      }
+    }
+    .dropdown-menu {
+      min-width: initial;
+      width: auto;
+      white-space: nowrap;
+
+      .dropdown-item {
+        text-transform: uppercase;
+        padding-right: 1.5rem;
+        @include primary-font-custom(16px, 500);
+        &:hover,&:focus,&:active {
+          background: rgba($cst-color-3,.9);
+        }
+      }      
     }
   }
 }

@@ -64,13 +64,6 @@ wp-config.php
 *.sql
 *.sqlite
 
-# Ignora archivos de caché de minificación
-*.min.css
-*.min.js
-
-# Ignora archivos generados por herramientas de optimización de imágenes
-*.webp
-
 # Ignora archivos de configuración de Composer si no los necesitas en el repositorio
 composer.lock
 

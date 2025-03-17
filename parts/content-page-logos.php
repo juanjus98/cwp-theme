@@ -18,7 +18,7 @@ echo '</pre>'; */
         <div class="container">
             <?php if (!empty($logos_data['title'])) : ?>
                 <div class="row justify-content-center">
-                    <div class="col-md-5">
+                    <div class="col-md-9">
                         <div class="content-description text-center">
                             <h2 class="header-3 text-white title-motion">
                                 <?php echo esc_html($logos_data['title']); ?>
