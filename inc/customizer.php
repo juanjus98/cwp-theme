@@ -770,3 +770,28 @@ function custom_polylang_language_switcher_styles() {
     <?php
 }
 add_action('wp_head', 'custom_polylang_language_switcher_styles');
+
+/**
+ * Limitar el tamaño de carga de archivos a 5MB en WordPress
+ * Añade este código al archivo functions.php de tu tema o a un plugin personalizado
+ */
+// Limitar el tamaño de carga para todos los tipos de archivos a 5MB
+function limitar_tamano_subida_archivos( $file ) {
+    // 5MB en bytes = 5 * 1024 * 1024 = 5242880
+    $limite_tamano = 5 * 1024 * 1024;
+    
+    // Comprobar si el archivo excede el límite
+    if ( $file['size'] > $limite_tamano ) {
+        $file['error'] = sprintf( __( 'El archivo "%s" excede el límite de tamaño de 5MB.', 'text-domain' ), $file['name'] );
+    }
+    
+    return $file;
+}
+add_filter( 'wp_handle_upload_prefilter', 'limitar_tamano_subida_archivos' );
+
+// Opcional: También puedes modificar la configuración de PHP para WordPress
+function modificar_configuracion_php_para_uploads() {
+    @ini_set( 'upload_max_size', '5M' );
+    @ini_set( 'post_max_size', '5M' );
+}
+add_action( 'init', 'modificar_configuracion_php_para_uploads' );
