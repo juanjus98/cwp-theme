@@ -34,12 +34,10 @@ if (function_exists('pll_get_post')) {
         $contact_page_id = $contact_pages[0]->ID;
     }
 }
-
 // Obtener el título y el ID del formulario
 $contact_title = $contact_page_id ? get_the_title($contact_page_id) : __('Contáctanos', 'BasherTheme');
 $form_id = $contact_page_id ? carbon_get_post_meta($contact_page_id, 'crb_contact_form') : '';
 ?>
-
 <section class="sec-form bg-image">
     <div class="container">
         <div class="row">
